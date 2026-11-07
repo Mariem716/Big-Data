@@ -1,0 +1,32 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Java / Maven
+target/
+*.class
+
+# IDE
+.idea/
+.vscode/
+
+# Données volumineuses
+data/raw/*
+data/processed/*
+
+# Modèles générés
+ml/models/*.pkl
+ml/models/*.joblib
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+!data/raw/.gitkeep
+!data/processed/.gitkeep
