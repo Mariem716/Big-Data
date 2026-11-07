@@ -1,61 +1,23 @@
-# P02 - Fraud Detection
+# Dataset PaySim
 
-## Project Description
+## 1. Source des données
 
-This project focuses on detecting potentially fraudulent financial transactions using Big Data technologies and a Lambda Architecture.
+Le projet utilise le dataset PaySim pour la détection de transactions financières frauduleuses.
 
-The project uses the PaySim synthetic financial dataset and combines historical batch processing with simulated real-time transaction processing.
+- **Source :** [PaySim – Kaggle](https://www.kaggle.com/datasets/ealaxi/paysim1)
+- **Format :** CSV
+- **Nombre de transactions :** environ 6 362 620
 
-## Objectives
+## 2. Organisation des données
 
-- Analyze financial transactions using Hadoop HDFS.
-- Implement two Java Hadoop MapReduce jobs (MR1 and MR2).
-- Generate historical profiles and transaction features.
-- Simulate real-time transaction processing using Apache Kafka.
-- Develop a classical Machine Learning model for fraud detection.
-- Integrate historical profiles and real-time predictions into a service.
+- `raw/` : données originales téléchargées.
+- `processed/` : données préparées après nettoyage et transformation.
+- `samples/` : petits échantillons utilisés pour les tests.
 
-## Technologies
+## 3. Préparation des données
 
-- **Big Data:** Hadoop, HDFS, YARN, MapReduce
-- **Streaming:** Apache Kafka
-- **Machine Learning:** Python, Scikit-learn
-- **Data Processing:** Pandas
-- **Version Control:** Git and GitHub
+Les données seront analysées, nettoyées et préparées avant leur intégration dans HDFS et leur utilisation dans les traitements MapReduce et le modèle Machine Learning.
 
-## Dataset
+## 4. Remarque
 
-The project uses the PaySim dataset:
-
-https://www.kaggle.com/datasets/ealaxi/paysim1
-
-The complete dataset is not included in this repository because of its size.
-
-See [data/README.md](data/README.md) for more information.
-
-## Project Architecture
-
-The system follows a Lambda Architecture composed of:
-
-- Batch Layer: Hadoop MapReduce (MR1 and MR2).
-- Speed Layer: Kafka and a transaction consumer.
-- Service Layer: Historical profiles, ML scores and fraud alerts.
-
-## Project Structure
-
-The repository is organized into the following main components:
-
-- `docs/`: Project documentation and architecture.
-- `data/`: Dataset documentation and samples.
-- `hadoop/`: Hadoop MapReduce jobs and scripts.
-- `ml/`: Machine Learning implementation.
-- `kafka/`: Kafka producer and consumer.
-- `service/`: Fraud detection service.
-- `tests/`: Project tests.
-- `screenshots/`: Execution evidence.
-
-## Team
-
-Project P02 – Big Data  
-Academic year: 2026/2027  
-ISIMa – Master 1 Artificial Intelligence and Data Science
+Le dataset complet n'est pas stocké dans ce dépôt Git en raison de sa taille. Chaque membre doit le télécharger depuis la source indiquée.

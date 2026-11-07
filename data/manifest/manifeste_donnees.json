@@ -1,0 +1,47 @@
+{
+  "projet": "P02 - Détection de transactions financières frauduleuses (architecture Lambda)",
+  "version_traitement": "v1",
+  "genere_le": "2026-11-07T14:05:49",
+  "origine": {
+    "jeu_de_donnees": "Synthetic Financial Datasets For Fraud Detection (PaySim)",
+    "proprietaire": "Edgar Lopez-Rojas",
+    "url": "https://www.kaggle.com/datasets/ealaxi/paysim1",
+    "licence": "CC BY-SA 4.0",
+    "reference_scientifique": "E. A. Lopez-Rojas, A. Elmir, S. Axelsson, PaySim: A financial mobile money simulator for fraud detection, EMSS, 2016",
+    "documentation": "docs/source_donnees.md",
+    "fichier": "PS_20174392719_1491204439457_log.csv",
+    "taille_octets": 493534783,
+    "sha256": "16910f90577b0d981bf8ff289714510bb89bc71bff7d3f220f024e287e4eea6b"
+  },
+  "periode": {
+    "unite": "step (1 step = 1 heure simulée, pas une date civile)",
+    "step_min": 1,
+    "step_max": 743,
+    "nb_steps_distincts": 743
+  },
+  "volumes": {
+    "nb_lignes": 6362620,
+    "nb_lignes_rejetees": 0,
+    "classe_positive_isFraud_1": 8213,
+    "classe_negative_isFraud_0": 6354407,
+    "taux_fraude_pourcent": 0.1291
+  },
+  "echantillonnage": {
+    "graine": 42,
+    "echantillon_realise": false,
+    "remarque": "Aucun échantillonnage à ce stade ; la graine est fixée pour tout tirage futur."
+  },
+  "colonnes_exclues_des_variables_predictives": [
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "isFraud (étiquette : validation et évaluation seulement)",
+    "isFlaggedFraud"
+  ],
+  "environnement": {
+    "python": "3.14.5",
+    "pandas": "3.0.3",
+    "systeme": "Windows-11-10.0.26300-SP0"
+  }
+}
