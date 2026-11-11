@@ -2,7 +2,7 @@
 <configuration>
     <property>
         <name>yarn.resourcemanager.hostname</name>
-        <value>p02-hadoop</value>
+        <value>resourcemanager</value>
     </property>
 
     <property>

@@ -1,0 +1,93 @@
+name: p02
+
+services:
+  namenode:
+    image: apache/hadoop:3.5.0
+    container_name: namenode
+    hostname: namenode
+    user: "root:root"
+    restart: unless-stopped
+    ports:
+      - "9870:9870"
+      - "8020:8020"
+    volumes:
+      - namenode_data:/opt/hadoop/data/nameNode
+      - ./config:/project-config:ro
+    command:
+      - bash
+      - -c
+      - |
+        set -e
+        cp /project-config/*.xml /opt/hadoop/etc/hadoop/
+        mkdir -p /opt/hadoop/data/nameNode
+        if [ ! -f /opt/hadoop/data/nameNode/current/VERSION ]; then
+          echo "Formatage initial du NameNode"
+          hdfs namenode -format -nonInteractive
+        fi
+        exec hdfs namenode
+
+  datanode:
+    image: apache/hadoop:3.5.0
+    container_name: datanode
+    hostname: datanode
+    user: "root:root"
+    restart: unless-stopped
+    depends_on:
+      - namenode
+    ports:
+      - "9864:9864"
+    volumes:
+      - datanode_data:/opt/hadoop/data/dataNode
+      - ./config:/project-config:ro
+    command:
+      - bash
+      - -c
+      - |
+        set -e
+        cp /project-config/*.xml /opt/hadoop/etc/hadoop/
+        mkdir -p /opt/hadoop/data/dataNode
+        exec hdfs datanode
+
+  resourcemanager:
+    image: apache/hadoop:3.5.0
+    container_name: resourcemanager
+    hostname: resourcemanager
+    user: "root:root"
+    restart: unless-stopped
+    depends_on:
+      - namenode
+    ports:
+      - "8088:8088"
+    volumes:
+      - ./config:/project-config:ro
+    command:
+      - bash
+      - -c
+      - |
+        set -e
+        cp /project-config/*.xml /opt/hadoop/etc/hadoop/
+        exec yarn resourcemanager
+
+  nodemanager:
+    image: apache/hadoop:3.5.0
+    container_name: nodemanager
+    hostname: nodemanager
+    user: "root:root"
+    restart: unless-stopped
+    depends_on:
+      - resourcemanager
+    ports:
+      - "8042:8042"
+    volumes:
+      - ./config:/project-config:ro
+    command:
+      - bash
+      - -c
+      - |
+        set -e
+        cp /project-config/*.xml /opt/hadoop/etc/hadoop/
+        exec yarn nodemanager
+
+volumes:
+  namenode_data:
+  datanode_data:

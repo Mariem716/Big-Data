@@ -2,6 +2,6 @@
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://p02-hadoop:9000</value>
+        <value>hdfs://namenode:8020</value>
     </property>
 </configuration>
