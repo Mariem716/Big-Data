@@ -13,6 +13,7 @@ services:
     volumes:
       - namenode_data:/opt/hadoop/data/nameNode
       - ./config:/project-config:ro
+      - ./mapreduce:/project/mapreduce
     command:
       - bash
       - -c
