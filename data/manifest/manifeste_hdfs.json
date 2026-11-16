@@ -1,0 +1,41 @@
+{
+    "version": "v1",
+    "date_execution": "2026-11-14T12:31:26.753447",
+    "hadoop": "Hadoop 3.5.0",
+    "repertoire_hdfs": "/p02/raw/history",
+    "nombre_fichiers_attendus": 2,
+    "transactions_total": 6273154,
+    "volume_local_total_octets": 491857927,
+    "volume_hdfs_total_octets": 491857927,
+    "fichiers": [
+        {
+            "nom": "paysim_train.csv",
+            "source_locale": "C:\\Users\\Utilisateur1\\Desktop\\big data\\TP02\\Big-Data\\data\\processed\\train\\paysim_train.csv",
+            "destination_hdfs": "/p02/raw/history/paysim_train.csv",
+            "taille_locale_octets": 476853060,
+            "taille_hdfs_octets": 476853060,
+            "transactions": 6082007,
+            "step_min": 1,
+            "step_max": 520,
+            "sha256_local": "45d71773bb53f2d16d12f8e040ba8639556555351522668d77b54d7d509de630",
+            "sha256_hdfs": "45d71773bb53f2d16d12f8e040ba8639556555351522668d77b54d7d509de630",
+            "date_chargement_hdfs": "2026-11-14 10:13:09",
+            "statut": "SUCCESS"
+        },
+        {
+            "nom": "paysim_validation.csv",
+            "source_locale": "C:\\Users\\Utilisateur1\\Desktop\\big data\\TP02\\Big-Data\\data\\processed\\validation\\paysim_validation.csv",
+            "destination_hdfs": "/p02/raw/history/paysim_validation.csv",
+            "taille_locale_octets": 15004867,
+            "taille_hdfs_octets": 15004867,
+            "transactions": 191147,
+            "step_min": 521,
+            "step_max": 631,
+            "sha256_local": "b8418fefd27bdb78b955bdea2ce52050a7136fd1500ba0ff2078ff31abc7023b",
+            "sha256_hdfs": "b8418fefd27bdb78b955bdea2ce52050a7136fd1500ba0ff2078ff31abc7023b",
+            "date_chargement_hdfs": "2026-11-14 10:13:13",
+            "statut": "SUCCESS"
+        }
+    ],
+    "statut_global": "SUCCESS"
+}
